@@ -22,7 +22,9 @@ public class TruthTableReader {
 				headerLine = new HeaderLine(line.split(";"));
 				firstLine = false;
 			} else {
-				Line.registerLine(i, new TruthTableLine(headerLine, line.split(";")));
+				TruthTableLine tableLine = new TruthTableLine(headerLine, line.split(";"));
+				NewTruthTableLine asNewLine = tableLine.asNewLine();
+				Line.registerLine(i, asNewLine);
 			}
 		}
 

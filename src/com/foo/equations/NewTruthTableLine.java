@@ -4,5 +4,13 @@ import java.util.List;
 
 public class NewTruthTableLine {
 
-	private List<TruthTableEntry> entries;
+	private final List<TruthTableEntry> entries;
+
+	public NewTruthTableLine(List<TruthTableEntry> entries) {
+		this.entries = entries;
+	}
+
+	public List<TruthTableEntry> getEntries() {
+		return entries;
+	}
 }

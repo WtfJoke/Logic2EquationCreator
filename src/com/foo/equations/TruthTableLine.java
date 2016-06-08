@@ -35,4 +35,16 @@ public class TruthTableLine {
 		return preceedingValues;
 	}
 
+	public NewTruthTableLine asNewLine() {
+		List<TruthTableEntry> entries = new ArrayList<>();
+		for (int i = 0; i < getValues().size(); i++) {
+			String headerName = getHeaderLine().getHeaders().get(i);
+			String value = getValues().get(i);
+			TruthTableEntry truthTableEntry = new TruthTableEntry(headerName, value);
+			entries.add(truthTableEntry);
+		}
+		return new NewTruthTableLine(entries);
+
+	}
+
 }
